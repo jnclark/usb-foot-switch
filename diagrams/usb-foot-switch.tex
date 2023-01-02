@@ -1,0 +1,31 @@
+% Simple Circuit diagram for usb-foot-switch.ino
+% J. Clark 2 January 2023
+\documentclass[margin=1mm]{standalone}
+\usepackage[siunitx]{circuitikz}
+\begin{document}
+\begin{circuitikz}
+  \draw
+  (0,0) to[resistor, l=10<k\ohm>, o-o] (4, 0) to[closing switch, o-o] (8,0)
+  (0,2) to[resistor, l=10<k\ohm>, o-o] (4, 2) to[closing switch, o-o] (8,2)
+  (0,4) to[resistor, l=10<k\ohm>, o-o] (4, 4) to[closing switch, o-o] (8,4)
+  ;
+  \draw (0,0) to (0,4);
+  \draw (8,0) to (8,4);
+
+  \draw[-stealth] (4,0) to (4,-1) to (6, -1) node[right] {\texttt{
+    bonusPin}};
+  \draw[-stealth] (4,2) to (4,1) to (6, 1)  node[right] {\texttt{
+    metaPin}};
+  \draw[-stealth] (4,4) to (4,3) to (6, 3) node[right] {\texttt{
+    ctrlPin}};
+  \draw[-stealth reversed] (0,2) to (-2,2) node[above right] {\texttt{
+    5V}};
+  \draw[-stealth] (8,2) to (10,2) node[below left] {\texttt{
+    GND}};
+\end{circuitikz}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
